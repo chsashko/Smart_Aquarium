@@ -25,8 +25,8 @@ Servo servo;
 String web,header;
 
 // Config WiFi parameters
-const char* ssid = "1dlink";
-const char* password = "1111111111";
+const char* ssid = "TP-Link_AE9F";
+const char* password = "00031950";
 
 IPAddress staticIP(192,168,43,122);
 IPAddress gateway(192,168,43,1);
