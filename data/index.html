@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+    body{
+  margin: 0;
+  overflow: hidden;
+  
+  }
+
+
+html {
+
+	background: linear-gradient(+45deg,  #b2ff59, #4caf50, #42a5f5 ,#b388ff);
+	background-size: 300% 300%;
+	animation: gradient 10s ease infinite;
+
+}
+h1,h2,h3,h4,h5{
+	text-align: center;
+    
+}
+
+}
+button{
+	text-align:center;
+	}
+.btn-large{
+  width:100%;
+}
+    </style>
+  	<link rel="icon" href="data:,">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  	
+  	<meta charset="utf-8">
+  	<title>Smart Arvarium</title>
+  </head>
+<header class="header">
+	    <div class="row">
+		   <div class="col s12">
+			<h1 class="zagolovok">
+			<strong>Smart</strong> Aquarium
+			</h1>
+			<h2 class="avtor">
+			<small><em>by Sashko</em></small>
+			
+		    </div>
+		</div>
+</header>
+
+<body>
+
+		<div class="stage">
+ 		    <div class="sun"></div>
+ 			<div class="grass"></div>
+ 			<div class="square"></div>
+  			<div class="round"></div>
+			
+		</div>
+			<div class="row">
+				<form method="POST" id="send" action="/get">
+        </form>
+			</div>
+			<div class="row">
+				<div class="col s2 offset-s5 ">
+
+
+					<input id="vkl" name="vkl" type="time" value="11:00" form="send" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 offset-s5 ">
+					<input id="vukl" name="vukl" type="time" value="22:00" form="send" required>
+				
+			    </div>
+		    </div>
+
+	
+	<div class="row">
+  		
+       		<div class="col s2 offset-s5">
+  				  <a id="feedButton" class="btn-large waves-effect waves-light" href="/feed_fish" width="100%">Покормити риб</a>
+          </div>   
+  </div>
+  <div class="row"> 
+          <div class="col s2 offset-s5">    
+  				  <a class="btn-large waves-effect waves-light" href="http://192.168.43.107/">Трансляція</a>
+  	    	</div>
+  	    
+  </div>
+  <div class="temperature">
+  	<div class="row">
+  		<div class="col  s1 offset-s4 ">
+  			<strong >Time set eat:</strong>
+  	    </div>
+  	    <div class="col s2 center-align"> 
+  	    	<input id="zzz" name="zzz" type="time" value="08:00"  form="send" required>
+  	    </div>
+      </div>
+      <div class="row">
+        <div class="col s2 offset-s5">
+          <button   class="btn-large waves-effect waves-light" type="submit" form="send">Встановити розклад</button>
+        </div>
+      </div>
+  	</div>
+   <div class="row"><h5 class="temp">Temperature "+temp+"°С</h5>
+     </div>
+   </div>
+ </body>
+ </html>
