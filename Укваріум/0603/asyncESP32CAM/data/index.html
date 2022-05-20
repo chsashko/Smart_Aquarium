@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+    body{
+  margin: 0;
+  overflow: hidden;
+  
+  }
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  background: steelblue;
+  box-shadow: 0 -400px 300px -300px orangered inset;
+  animation: sky-change 15s infinite linear;
+  }
+
+.sun {
+  position: absolute;
+  left: 0;
+  bottom: -30%;
+  width: 10em;
+  height: 10em;
+  margin-left: -2.5em;
+  margin-top: 0;
+  background: orangered;
+  border-radius: 50%;
+  box-shadow: 0 0 20px orange;
+  animation: 15s infinite linear;
+  animation-name: sun-move, sun-color;
+  }
+
+.grass {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  /*background: url(//img-fotki.yandex.ru/get/5000/5091629.98/0_7a92d_7ece70d7_XL.png) no-repeat center bottom;*/
+}
+
+@keyframes sky-change {
+  0% {
+    background: darkslateblue;
+  }
+  50% {
+    background: skyblue;
+    box-shadow: 0 -400px 300px -300px steelblue inset;
+  }
+  85% {
+    background: darkslateblue;
+    box-shadow: 0 -400px 300px -300px orangered inset;
+  }
+  100% {
+    background: darkslateblue;
+  }
+}
+
+@keyframes sun-move {
+  0% {
+  }
+  10% {
+    margin-left: -4.5em;
+  }
+  20% {
+    margin-left: -5.5em;
+  }
+  30% {
+    margin-left: -6em;
+  }
+  40% {
+    margin-left: -4.5em;
+  }
+  50% {
+    left: 50%;
+    bottom: 75%;
+    width: 5em;
+    height: 5em;
+    margin-left: -2.5em;
+  }
+  60% {
+    margin-left: 1.5em;
+  }
+  70% {
+    margin-left: 3.5em;
+  }
+  80% {
+    margin-left: 2.5em;
+  }
+  90% {
+    margin-left: 1em;
+  }
+  100% {
+    left: 98%;
+    margin-left: -2.5em;
+  }
+}
+
+@keyframes sun-color {
+  20% {
+    background: orange;
+  }
+  40% {
+    background: gold;
+    box-shadow: 0 0 35px gold;
+  }
+  60% {
+    background: yellow;
+    box-shadow: 0 0 35px yellow;
+  }
+  80% {
+  background: orange;
+  }
+}
+
+
+html {
+
+	background: linear-gradient(+45deg,  #b2ff59, #4caf50, #42a5f5 ,#b388ff);
+	background-size: 300% 300%;
+	animation: gradient 10s ease infinite;
+
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+h1,h2,h3,h4,h5{
+	text-align: center;
+    
+}
+
+}
+button{
+	text-align:center;
+	}
+.btn-large{
+  width:100%;
+}
+    </style>
+  	<link rel="icon" href="data:,">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  	
+  	<meta charset="utf-8">
+  	<title>Smart Arvarium</title>
+  </head>
+<header class="header">
+	    <div class="row">
+		   <div class="col s12">
+			<h1 class="zagolovok">
+			<strong>Smart</strong> Aquarium
+			</h1>
+			<h2 class="avtor">
+			<small><em>by Sashko</em></small>
+			
+		    </div>
+		</div>
+</header>
+
+<body>
+
+		<div class="stage">
+ 		    <div class="sun"></div>
+ 			<div class="grass"></div>
+ 			<div class="square"></div>
+  			<div class="round"></div>
+			
+		</div>
+			<div class="row">
+				<form method="POST" id="send" action="/get">
+        </form>
+			</div>
+			<div class="row">
+				<div class="col s2 offset-s5 ">
+
+
+					<input id="vkl" name="vkl" type="time" value="11:00" form="send" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s2 offset-s5 ">
+					<input id="vukl" name="vukl" type="time" value="22:00" form="send" required>
+				
+			    </div>
+		    </div>
+
+	
+	<div class="row">
+  		
+       		<div class="col s2 offset-s5">
+  				  <a id="feedButton" class="btn-large waves-effect waves-light" href="/feed_fish" >Покормити риб</a>
+          </div>   
+  </div>
+  <div class="row"> 
+          <div class="col s2 offset-s5">    
+  				  <a class="btn-large waves-effect waves-light" href="http://192.168.43.107/">Трансляція</a>
+  	    	</div>
+  	    
+  </div>
+  <div class="temperature">
+  	<div class="row">
+  		<div class="col  s1 offset-s4 ">
+  			<strong >Time set eat:</strong>
+  	    </div>
+  	    <div class="col s2 center-align"> 
+  	    	<input id="zzz" name="zzz" type="time" value="08:00"  form="send" required>
+  	    </div>
+      </div>
+      <div class="row">
+        <div class="col s2 offset-s5">
+          <button   class="btn-large waves-effect waves-light" type="submit" form="send">Встановити розклад</button>
+        </div>
+      </div>
+  	</div>
+   <div class="row"><h5 class="temp">Temperature "+temp+"°С</h5>
+     </div>
+   </div>
+   
+ </body>
+ </html>
